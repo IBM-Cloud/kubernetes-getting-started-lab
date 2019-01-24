@@ -1,0 +1,660 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Use a custom domain · Getting started with scalable web application on Kubernetes</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-prism/prism-tomorrow.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-collapsible-chapters/collapsible-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-hints/plugin-hints.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fancybox/jquery.fancybox.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fancybox/jquery.fancybox-buttons.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-web-header/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-codetabs/codetabs.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="observability.html" />
+    
+    
+    <link rel="prev" href="ingress-with-ibm-domain.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">Introduction</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="prerequisites.html">
+            
+                <a href="prerequisites.html">
+            
+                    
+                        <b>1.2.</b>
+                    
+                    Prerequisites
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">IBM Cloud Kubernetes Service</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="iks-tour.html">
+            
+                <a href="iks-tour.html">
+            
+                    
+                        <b>2.1.</b>
+                    
+                    IBM Cloud Kubernetes Service
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="iks-tour-overview.html">
+            
+                <a href="iks-tour-overview.html">
+            
+                    
+                        <b>2.2.</b>
+                    
+                    Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="iks-tour-access.html">
+            
+                <a href="iks-tour-access.html">
+            
+                    
+                        <b>2.3.</b>
+                    
+                    Access
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="iks-tour-workers.html">
+            
+                <a href="iks-tour-workers.html">
+            
+                    
+                        <b>2.4.</b>
+                    
+                    Worker Nodes and Pools
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Prepare</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="prepare.html">
+            
+                <a href="prepare.html">
+            
+                    
+                        <b>3.1.</b>
+                    
+                    Log in IBM Cloud
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="prepare-target.html">
+            
+                <a href="prepare-target.html">
+            
+                    
+                        <b>3.2.</b>
+                    
+                    Target your environment
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Create</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="create-app.html">
+            
+                <a href="create-app.html">
+            
+                    
+                        <b>4.1.</b>
+                    
+                    Create
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="create-app-build.html">
+            
+                <a href="create-app-build.html">
+            
+                    
+                        <b>4.2.</b>
+                    
+                    Build locally
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="create-app-run.html">
+            
+                <a href="create-app-run.html">
+            
+                    
+                        <b>4.3.</b>
+                    
+                    Run locally
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Deploy</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="push-app.html">
+            
+                <a href="push-app.html">
+            
+                    
+                        <b>5.1.</b>
+                    
+                    Push to registry
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="deploy-app.html">
+            
+                <a href="deploy-app.html">
+            
+                    
+                        <b>5.2.</b>
+                    
+                    Deploy with Helm
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Access</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="ingress-with-ibm-domain.html">
+            
+                <a href="ingress-with-ibm-domain.html">
+            
+                    
+                        <b>6.1.</b>
+                    
+                    Use IBM ingress domain
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="6.2" data-path="ingress-with-custom-domain.html">
+            
+                <a href="ingress-with-custom-domain.html">
+            
+                    
+                        <b>6.2.</b>
+                    
+                    Use a custom domain
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Observe</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="observability.html">
+            
+                <a href="observability.html">
+            
+                    
+                        <b>7.1.</b>
+                    
+                    Kubernetes Dashboard
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="observability-logging.html">
+            
+                <a href="observability-logging.html">
+            
+                    
+                        <b>7.2.</b>
+                    
+                    Logging
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="observability-monitoring.html">
+            
+                <a href="observability-monitoring.html">
+            
+                    
+                        <b>7.3.</b>
+                    
+                    Monitoring
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Scale</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="scaling.html">
+            
+                <a href="scaling.html">
+            
+                    
+                        <b>8.1.</b>
+                    
+                    Scaling
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Conclusion</li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" data-path="cleanup.html">
+            
+                <a href="cleanup.html">
+            
+                    
+                        <b>9.1.</b>
+                    
+                    Remove resources
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" data-path="conclusion.html">
+            
+                <a href="conclusion.html">
+            
+                    
+                        <b>9.2.</b>
+                    
+                    Conclusion
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Use a custom domain</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="use-a-custom-domain">Use a custom domain</h1>
+<p>To use your custom domain, you need to update your DNS records with either a CNAME record pointing to your IBM-provided domain or an A record pointing to the portable public IP address of the IBM-provided Ingress. As a paid cluster comes with fixed IP addresses, an A record is a good option.</p>
+<p>Given it may take time for DNS to propagate, this step is out of the scope of this tutorial. You will find detailed instructions on how to use your own custom domain in the service document under <a href="https://cloud.ibm.com/docs/containers/cs_apps.html#custom_domain_cert" target="_blank">Using the Ingress controller with a custom domain</a> and in <a href="https://cloud.ibm.com/docs/tutorials/scalable-webapp-kubernetes.html#custom_domain" target="_blank">this other tutorial</a>.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="ingress-with-ibm-domain.html" class="navigation navigation-prev " aria-label="Previous page: Use IBM ingress domain">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="observability.html" class="navigation navigation-next " aria-label="Next page: Kubernetes Dashboard">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Use a custom domain","level":"6.2","depth":1,"next":{"title":"Kubernetes Dashboard","level":"7.1","depth":1,"path":"observability.md","ref":"observability.md","articles":[]},"previous":{"title":"Use IBM ingress domain","level":"6.1","depth":1,"path":"ingress-with-ibm-domain.md","ref":"ingress-with-ibm-domain.md","articles":[]},"dir":"ltr"},"config":{"plugins":["prism","-highlight","collapsible-chapters","hints","copy-code-button","back-to-top-button","fancybox","web-header","codetabs"],"root":"book","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"webheader":{"headerTitle":"Getting started with scalable web application on Kubernetes"},"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"fancybox":{"helpers":{"buttons":{}},"openEffect":"elastic","closeEffect":"elastic"},"web-header":{},"search":{},"collapsible-chapters":{},"codetabs":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Getting started with scalable web application on Kubernetes","gitbook":"3.2.3"},"file":{"path":"ingress-with-custom-domain.md","mtime":"2018-11-11T11:11:11.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-11T11:11:11.000Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-collapsible-chapters/collapsible-chapters.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fancybox/jquery.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fancybox/jquery.mousewheel.pack.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fancybox/jquery.fancybox.pack.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fancybox/jquery.fancybox-buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fancybox/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-web-header/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-codetabs/codetabs.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
