@@ -1,6 +1,6 @@
 # Conclusion
 
-In this tutorial, you scaffolded a Java application, built Docker images and deployed the application to a Kubernetes cluster using helm.
+In this tutorial, you scaffolded an application, built Docker images and deployed the application to a Kubernetes cluster using helm.
 
 This is only the beginning of your Kubernetes journey. You can continue your discovery with these additional tutorials:
 * [Analyze logs and monitor the health of Kubernetes applications](https://cloud.ibm.com/docs/tutorials/kubernetes-log-analysis-kibana.html?pos=2#analyze-logs-and-monitor-the-health-of-kubernetes-applications)

@@ -1,6 +1,6 @@
 # Build the application locally
 
-You can build and run the application as you normally would using `mvn` for java local development. You can also build a docker image and run the application in a container to ensure consistent execution locally and on the cloud. Use the following steps to build your docker image.
+You can build and run the application as you normally would using `mvn` for Java local development or `npm` for Node. You can also build a docker image and run the application in a container to ensure consistent execution locally and on the cloud. Use the following steps to build your docker image.
 
 1. Ensure your local Docker engine is started.
    ```sh

@@ -28,4 +28,4 @@ ibmcloud ks workers %MYCLUSTER%
    {%- language name="Bash", type="sh" -%}
 ibmcloud ks workers $MYCLUSTER
    {%- endcodetabs %}
-12. Access the Java application at `http://worker-ip-address:portnumber/nameofproject`.
+12. Access the application at `http://worker-ip-address:portnumber/`.

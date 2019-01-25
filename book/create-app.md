@@ -6,13 +6,19 @@ The IBM Cloud developer tools `ibmcloud dev` greatly cut down on development tim
    ```sh
    ibmcloud dev create
    ```
-1. To create a Java starter, select:
-   * `Backend Service / Web App`
-   * `Java - MicroProfile / JavaEE`
-   * `Java Web App with Eclipse MicroProfile and Java EE (Web App)`.
+1. To create a Java or Node starter, select:
+   {% codetabs name="Java", type="sh" -%}
+- Backend Service / Web App
+- Java - MicroProfile / JavaEE
+- Java Web App with Eclipse MicroProfile and Java EE (Web App)
+   {%- language name="Node", type="sh" -%}
+- Backend Service / Web App
+- Node
+- Node.js Web App with Express.js (Web App)
+   {%- endcodetabs %}
 
    {% hint style='tip' %}
-   The developer tools also provide starters in other programming languages but for this tutorial you will focus on the Java starter.
+   The developer tools also provide several starter combinations in different programming languages.
    {% endhint %}
 1. Enter a **name** for your application.
    {% hint style='tip' %}
@@ -25,5 +31,3 @@ The IBM Cloud developer tools `ibmcloud dev` greatly cut down on development tim
 This generates a starter application complete with the code and all the necessary configuration files for local development and deployment to cloud on Cloud Foundry or Kubernetes.
 
 ![Generated files](images/create-app-files.png)
-
-For an overview of the files generated, see [Project Contents Documentation](https://cloud.ibm.com/docs/cloudnative/projects/java_project_contents.html#java-project-files).
