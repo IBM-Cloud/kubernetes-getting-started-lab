@@ -7,14 +7,14 @@ The IBM Cloud developer tools `ibmcloud dev` greatly cut down on development tim
    ibmcloud dev create
    ```
 1. To create a Node or Java starter, select:
-   {% codetabs name="Node", type="sh" -%}
-- Backend Service / Web App
-- Node
-- Node.js Web App with Express.js (Web App)
-   {%- language name="Java", type="sh" -%}
+   {% codetabs name="Java", type="sh" -%}
 - Backend Service / Web App
 - Java - MicroProfile / JavaEE
 - Java Web App with Eclipse MicroProfile and Java EE (Web App)
+   {%- language name="Node", type="sh" -%}
+- Backend Service / Web App
+- Node
+- Node.js Web App with Express.js (Web App)
    {%- endcodetabs %}
 
    {% hint style='tip' %}
