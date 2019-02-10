@@ -16,10 +16,11 @@ The service plan that you choose for an IBM Log Analysis with LogDNA instance de
 
 ## Configure your cluster with LogDNA
 
+1. Switch to your personal IBM Cloud account.
 1. Create an instance of [IBM Log Analysis with LogDNA](https://cloud.ibm.com/observe/logging/create) from the catalog:
    1. Set the **Service name** to **YOUR_IBM_ID-logdna**.
    1. Select the location where your cluster is created. If the location is not in the list, pick Dallas (us-south).
-   1. Select the resource group you were assigned to.
+   1. Use the default resource group.
    1. Click **Create**.
 1. In the [**Observability** category, under Logging](https://cloud.ibm.com/observe/logging), locate the service instance you created.
 1. Click **Edit log sources**:

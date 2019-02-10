@@ -22,10 +22,11 @@ Sysdig monitor is a third-party cloud-native container-intelligence management s
 
 ## Configure your cluster with Sysdig
 
+1. Switch to your personal IBM Cloud account.
 1. Create an instance of [IBM Cloud Monitoring with Sysdig](https://cloud.ibm.com/observe/monitoring/create) from the catalog:
    1. Set the **Service name** to **YOUR_IBM_ID-sysdig**.
    1. Select the location where your cluster is created. If the location is not in the list, pick Dallas (us-south).
-   1. Select the resource group you were assigned to.
+   1. Use the default resource group.
    1. Click **Create**.
 1. In the [**Observability** category, under Monitoring](https://cloud.ibm.com/observe/monitoring), locate the service instance you created.
 1. Click **Edit sources**:
