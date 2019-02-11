@@ -10,7 +10,7 @@ In this step, you'll configure kubectl to point to your cluster going forward. [
    ```
 1. Retrieve the cluster configuration by setting MYCLUSTER environment variable to your cluster name:
    {% codetabs name="Windows PowerShell", type="sh" -%}
-$env:MYCLUSTER=<CLUSTER_NAME>
+$env:MYCLUSTER="<CLUSTER_NAME>"
 ibmcloud ks cluster-config -s --cluster %MYCLUSTER% --export
    {% codetabs name="Windows Command", type="sh" -%}
 set MYCLUSTER=<CLUSTER_NAME>
