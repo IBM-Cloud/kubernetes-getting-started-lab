@@ -545,7 +545,7 @@
 <li>Retrieve the cluster configuration by setting MYCLUSTER environment variable to your cluster name:
 <div class="codetabs"><div class="codetabs-header"><div class="tab active" data-codetab="0">Windows</div><div class="tab" data-codetab="1">Bash</div></div><div class="codetabs-body"><div class="tab active" data-codetab="0"><pre class="language-"><code class="lang-sh"><span class="token keyword">set</span> MYCLUSTER<span class="token operator">=</span><span class="token operator">&lt;</span>CLUSTER_NAME<span class="token operator">&gt;</span>
 ibmcloud ks cluster-config -s --cluster %MYCLUSTER% --export</code></pre></div><div class="tab" data-codetab="1"><pre class="language-"><code class="lang-sh"><span class="token function">export</span> MYCLUSTER<span class="token operator">=</span><span class="token operator">&lt;</span>CLUSTER_NAME<span class="token operator">&gt;</span>
-ibmcloud ks cluster-config -s <span class="token variable">$MYCLUSTER</span> --export</code></pre></div></div></div></li>
+ibmcloud ks cluster-config -s --cluster <span class="token variable">$MYCLUSTER</span> --export</code></pre></div></div></div></li>
 <li>Copy and paste the displayed <strong>set</strong> command to set the KUBECONFIG environment variable as directed. To verify whether the KUBECONFIG environment variable is set properly or not, run the following command: <code>echo %KUBECONFIG%</code></li>
 <li><p>Check that the <code>kubectl</code> command is correctly configured</p>
 <pre class="language-"><code class="lang-sh">kubectl cluster-info
