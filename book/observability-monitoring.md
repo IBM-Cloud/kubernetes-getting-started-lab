@@ -31,7 +31,8 @@ Sysdig monitor is a third-party cloud-native container-intelligence management s
 1. In the [**Observability** category, under Monitoring](https://cloud.ibm.com/observe/monitoring), locate the service instance you created.
 1. Click **Edit sources**:
    1. Select **Kubernetes** as a source
-   1. Run the listed commands against your Kubernetes cluster to install the Sysdig Agent.
+   1. Scroll down the instructions list - you do not need to run the instructions to gain access to the cluster as you should already have done this earlier.
+   1. Run the commands against your Kubernetes cluster to install the Sysdig Agent.
 
 ## View metrics with Sysdig
 
