@@ -30,8 +30,86 @@ Sysdig monitor is a third-party cloud-native container-intelligence management s
    1. Click **Create**.
 1. In the [**Observability** category, under Monitoring](https://cloud.ibm.com/observe/monitoring), locate the service instance you created.
 1. Click **Edit sources**:
-   1. Select **Kubernetes** as a source
-   1. Run the listed commands against your Kubernetes cluster to install the Sysdig Agent.
+1. Select **Kubernetes** as a source and at the bootom of that page follow the instructions to Install Sysdig Agent to your cluster or follow the steps below:
+
+1. ***TO DELETE:*** Automated steps included in the instructions are bash only and they do not work in Windows Command line. 
+```sh
+curl -sL https://ibm.biz/install-sysdig-k8s-agent | bash -s -- -a b66e3139-b40a-46bc-af17-615dceedfdd0 -c ingest.us-south.monitoring.cloud.ibm.com -ac 'sysdig_capture_enabled: false'
+```
+*Note: The instructions that follow are based on the published instructions found here:* [Install Sysdig Agent manually to your cluster](https://cloud.ibm.com/docs/services/Monitoring-with-Sysdig/config_agent.html#kube_manually)
+
+1. Create a service account called sysdig-agent to monitor the kubernetes cluster. Run the following command:
+
+    ```sh
+    kubectl create serviceaccount sysdig-agent
+    ```
+
+1. Add a secret to your Kubernetes cluster. Run the following command:
+    ```sh
+    kubectl create secret generic sysdig-agent --from-literal=access-key=SYSDIG_ACCESS_KEY
+    ```
+    The SYSDIG_ACCESS_KEY is the ingestion key for the instance.
+
+    The Kubernetes secret contains the ingestion key which is used to authenticate the Sysdig agent with the IBM Cloud Monitoring with Sysdig service. It is used to open a secure web socket to the ingestion server on the monitoring back-end system.
+
+1. Create a cluster role and cluster role binding.
+
+    Download the sysdig-agent-clusterrole.yaml.
+
+    To add a cluster role, run the following command:
+    ```sh
+    kubectl apply -f sysdig-agent-clusterrole.yaml
+    ```
+    To add a cluster role binding, run the following command:
+    ```sh
+    kubectl create clusterrolebinding sysdig-agent --clusterrole=sysdig-agent --serviceaccount=default:sysdig-agent
+    ```
+
+1. Download the [sysdig-agent-configmap.yaml](https://raw.githubusercontent.com/draios/sysdig-cloud-scripts/master/agent_deploy/kubernetes/sysdig-agent-configmap.yaml).
+    Edit the sysdig-agent-configmap.yaml and add required parameters for configuring the agent to work in the IBM Cloud.
+
+    Use an editor to open the sysdig-agent-configmap.yaml file. Then, add the following parameters:
+
+    - ***k8s_cluster_name***: This parameter specifies the cluster name as a metric label. You can use the label kubernetes.cluster.name to navigate the Kubernetes dashboards by cluster name and filter out metrics associated with the cluster.
+
+    - ***collectorv***: This parameter specifies the ingestion URL for the region where the monitoring instance is available.
+
+    - ***collector_portv***: This parameter indicates the port on which the collector is listening on. It's value must be 6443.
+
+    - ***ssl***: This parameter must be set to true.
+
+    - ***ssl_verfiy_certificate***: This parameter must be set to true.
+
+    - ***new_k8s***: This parameter must be set to true to capture kube state metrics.
+
+    - ***sysdig_capture_enabled***: This parameter enables or disables the Sysdig capture feature. By default is set to true. 
+
+    An example yaml file looks like this:
+
+    ```sh
+    apiVersion: v1
+    kind: ConfigMap
+    metadata:
+    name: sysdig-agent
+    data:
+    dragent.yaml: |
+    tags: linux:ubuntu,dept:dev,local:nyc
+    collector: us-south.monitoring.cloud.ibm.com
+    collector_port: 6443
+    ssl: true
+    new_k8s: true
+    k8s_cluster_name: my_cluster_name
+    sysdig_capture_enabled: false
+    ```
+1. Apply the config map to the cluster. Run the following command:
+    ```sh
+    kubectl apply -f sysdig-agent-configmap.yaml
+    ```
+
+1. Download the [sysdig-agent-daemonset-v2.yaml](https://raw.githubusercontent.com/draios/sysdig-cloud-scripts/master/agent_deploy/kubernetes/sysdig-agent-daemonset-v2.yaml).  Apply the daemonset to deploy the Sysdig agent to the cluster. Run the following command:
+    ```sh
+    kubectl apply -f sysdig-agent-daemonset-v2.yaml
+    ```
 
 ## View metrics with Sysdig
 
