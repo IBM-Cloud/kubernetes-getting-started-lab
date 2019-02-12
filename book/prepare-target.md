@@ -6,7 +6,7 @@ In this step, you'll configure kubectl to point to your cluster going forward. [
 
 1. Target the resource group you have been assigned to:
    ```sh
-   ibmcloud target -g <RESOURCE_GROUP_NAME>
+   ibmcloud target -g think-iks
    ```
 1. Retrieve the cluster configuration by setting MYCLUSTER environment variable to your cluster name:
    {% codetabs name="Windows", type="sh" -%}
