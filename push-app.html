@@ -538,24 +538,12 @@
                                 <h1 id="build-and-push-the-application-to-a-docker-registry">Build and push the application to a Docker registry</h1>
 <p>Before you can run the application on the cluster, you first need to push the Docker image to the IBM Cloud private container registry.</p>
 <ol>
-<li>Find your <strong>namespace</strong> by listing all the namespace in the registry.<pre class="language-"><code class="lang-sh">ibmcloud cr namespaces
-</code></pre>
-</li>
-<li>Set MYNAMESPACE and MYPROJECT environment variables to your namespace and project name respectively
-<div class="codetabs"><div class="codetabs-header"><div class="tab active" data-codetab="0">Windows</div><div class="tab" data-codetab="1">Bash</div></div><div class="codetabs-body"><div class="tab active" data-codetab="0"><pre class="language-"><code class="lang-sh"><span class="token keyword">set</span> MYNAMESPACE<span class="token operator">=</span><span class="token operator">&lt;</span>NAMESPACE<span class="token operator">&gt;</span>
-<span class="token keyword">set</span> MYPROJECT<span class="token operator">=</span><span class="token operator">&lt;</span>PROJECT_NAME<span class="token operator">&gt;</span></code></pre></div><div class="tab" data-codetab="1"><pre class="language-"><code class="lang-sh"><span class="token function">export</span> MYNAMESPACE<span class="token operator">=</span><span class="token operator">&lt;</span>NAMESPACE<span class="token operator">&gt;</span>
-<span class="token function">export</span> MYPROJECT<span class="token operator">=</span><span class="token operator">&lt;</span>PROJECT_NAME<span class="token operator">&gt;</span></code></pre></div></div></div></li>
-<li>Identify your <strong>Container Registry</strong> (e.g. registry.ng.bluemix.net) by running:<pre class="language-"><code class="lang-sh">ibmcloud cr info
-</code></pre>
-The output should be similar to:<pre class="language-"><code class="lang-sh">Container Registry                registry.ng.bluemix.net
-Container Registry API endpoint   https://registry.ng.bluemix.net/api
-IBM Cloud API endpoint            https://api.ng.bluemix.net
-IBM Cloud account details         John&apos;s Account <span class="token punctuation">(</span>123456fafafafa<span class="token punctuation">)</span>
-IBM Cloud organization details     <span class="token punctuation">(</span><span class="token punctuation">)</span>
-</code></pre>
-</li>
-<li>Set MYREGISTRY env var to your registry (e.g registry.ng.bluemix.net).
-<div class="codetabs"><div class="codetabs-header"><div class="tab active" data-codetab="0">Windows</div><div class="tab" data-codetab="1">Bash</div></div><div class="codetabs-body"><div class="tab active" data-codetab="0"><pre class="language-"><code class="lang-sh"><span class="token keyword">set</span> MYREGISTRY<span class="token operator">=</span><span class="token operator">&lt;</span>REGISTRY<span class="token operator">&gt;</span></code></pre></div><div class="tab" data-codetab="1"><pre class="language-"><code class="lang-sh"><span class="token function">export</span> MYREGISTRY<span class="token operator">=</span><span class="token operator">&lt;</span>REGISTRY<span class="token operator">&gt;</span></code></pre></div></div></div></li>
+<li>Set MYPROJECT environment variable. Replace <project_name> with your project name.
+<div class="codetabs"><div class="codetabs-header"><div class="tab active" data-codetab="0">Windows</div><div class="tab" data-codetab="1">Bash</div></div><div class="codetabs-body"><div class="tab active" data-codetab="0"><pre class="language-"><code class="lang-sh"><span class="token keyword">set</span> MYPROJECT<span class="token operator">=</span><span class="token operator">&lt;</span>PROJECT_NAME<span class="token operator">&gt;</span></code></pre></div><div class="tab" data-codetab="1"><pre class="language-"><code class="lang-sh"><span class="token function">export</span> MYPROJECT<span class="token operator">=</span><span class="token operator">&lt;</span>PROJECT_NAME<span class="token operator">&gt;</span></code></pre></div></div></div></project_name></li>
+<li>Set MYNAMESPACE and MYREGISTRY and env vars. Copy and paste these commands.
+<div class="codetabs"><div class="codetabs-header"><div class="tab active" data-codetab="0">Windows</div><div class="tab" data-codetab="1">Bash</div></div><div class="codetabs-body"><div class="tab active" data-codetab="0"><pre class="language-"><code class="lang-sh"><span class="token keyword">set</span> MYNAMESPACE<span class="token operator">=</span>think-iks
+<span class="token keyword">set</span> MYREGISTRY<span class="token operator">=</span>registry.ng.bluemix.net</code></pre></div><div class="tab" data-codetab="1"><pre class="language-"><code class="lang-sh"><span class="token function">export</span> MYNAMESPACE<span class="token operator">=</span>think-iks 
+<span class="token function">export</span> MYREGISTRY<span class="token operator">=</span>registry.ng.bluemix.net</code></pre></div></div></div></li>
 <li>Build and tag (<code>-t</code>) the docker image
 <div class="codetabs"><div class="codetabs-header"><div class="tab active" data-codetab="0">Windows</div><div class="tab" data-codetab="1">Bash</div></div><div class="codetabs-body"><div class="tab active" data-codetab="0"><pre class="language-"><code class="lang-sh">docker build <span class="token keyword">.</span> -t %MYREGISTRY%/%MYNAMESPACE%/%MYPROJECT%:v1.0.0</code></pre></div><div class="tab" data-codetab="1"><pre class="language-"><code class="lang-sh">docker build <span class="token keyword">.</span> -t <span class="token variable">$MYREGISTRY</span>/<span class="token variable">$MYNAMESPACE</span>/<span class="token variable">$MYPROJECT</span>:v1.0.0</code></pre></div></div></div></li>
 <li>Ensure you are logged into the IBM container registry<pre class="language-"><code class="lang-sh">ibmcloud cr login

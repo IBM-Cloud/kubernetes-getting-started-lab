@@ -544,7 +544,7 @@
 <p><div class="alert alert-success hints-alert"><div class="hints-icon"><i class="fa fa-mortar-board"></i></div><div class="hints-container"><p>   To upgrade helm, run this command <code>helm init --upgrade</code></p>
 </div></div></p>
 </li>
-<li><p>To install a Helm chart, change to the <code>chart\YOUR PROJECT NAME</code> directory and run the below command
+<li><p>To install a Helm chart, change to the <code>chart\YOUR PROJECT NAME</code> directory and run the install command
 <div class="codetabs"><div class="codetabs-header"><div class="tab active" data-codetab="0">Windows</div><div class="tab" data-codetab="1">Bash</div></div><div class="codetabs-body"><div class="tab active" data-codetab="0"><pre class="language-"><code class="lang-sh">helm <span class="token function">install</span> <span class="token keyword">.</span> --name %MYPROJECT% --set image.repository<span class="token operator">=</span>%MYREGISTRY%/%MYNAMESPACE%/%MYPROJECT% --debug</code></pre></div><div class="tab" data-codetab="1"><pre class="language-"><code class="lang-sh">helm <span class="token function">install</span> <span class="token keyword">.</span> --name <span class="token variable">$MYPROJECT</span> --set image.repository<span class="token operator">=</span><span class="token variable">$MYREGISTRY</span>/<span class="token variable">$MYNAMESPACE</span>/<span class="token variable">$MYPROJECT</span> --debug</code></pre></div></div></div></p>
 </li>
 <li>Identity the public port the service is listening on. The port is a 5-digit number (e.g., 31569) under <code>PORT(S)</code>.

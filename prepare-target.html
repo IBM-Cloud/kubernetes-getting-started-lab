@@ -536,16 +536,13 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="target-your-environment">Target your environment</h1>
-<h2 id="kubernetes">Kubernetes</h2>
 <p>In this step, you&apos;ll configure kubectl to point to your cluster going forward. <a href="https://kubernetes.io/docs/user-guide/kubectl-overview/" target="_blank">kubectl</a> is a command line tool that you use to interact with a Kubernetes cluster.</p>
 <ol>
-<li>Target the resource group you have been assigned to:<pre class="language-"><code class="lang-sh">ibmcloud target -g think-iks
+<li>Target the resource group you have been assigned to:<pre class="language-"><code class="lang-sh">ibmcloud target -g think-iks --cf
 </code></pre>
 </li>
-<li>Retrieve the cluster configuration by setting MYCLUSTER environment variable to your cluster name:
-<div class="codetabs"><div class="codetabs-header"><div class="tab active" data-codetab="0">Windows</div><div class="tab" data-codetab="1">Bash</div></div><div class="codetabs-body"><div class="tab active" data-codetab="0"><pre class="language-"><code class="lang-sh"><span class="token keyword">set</span> MYCLUSTER<span class="token operator">=</span><span class="token operator">&lt;</span>CLUSTER_NAME<span class="token operator">&gt;</span>
-ibmcloud ks cluster-config -s --cluster %MYCLUSTER% --export</code></pre></div><div class="tab" data-codetab="1"><pre class="language-"><code class="lang-sh"><span class="token function">export</span> MYCLUSTER<span class="token operator">=</span><span class="token operator">&lt;</span>CLUSTER_NAME<span class="token operator">&gt;</span>
-ibmcloud ks cluster-config -s --cluster <span class="token variable">$MYCLUSTER</span> --export</code></pre></div></div></div></li>
+<li>Retrieve the cluster configuration:
+<div class="codetabs"><div class="codetabs-header"><div class="tab active" data-codetab="0">Windows</div><div class="tab" data-codetab="1">Bash</div></div><div class="codetabs-body"><div class="tab active" data-codetab="0"><pre class="language-"><code class="lang-sh">ibmcloud ks cluster-config <span class="token operator">&lt;</span>CLUSTER_NAME<span class="token operator">&gt;</span></code></pre></div><div class="tab" data-codetab="1"><pre class="language-"><code class="lang-sh">ibmcloud ks cluster-config <span class="token operator">&lt;</span>CLUSTER_NAME<span class="token operator">&gt;</span></code></pre></div></div></div></li>
 <li>Copy and paste the displayed <strong>set</strong> command to set the KUBECONFIG environment variable as directed. To verify whether the KUBECONFIG environment variable is set properly or not, run the following command: <code>echo %KUBECONFIG%</code></li>
 <li><p>Check that the <code>kubectl</code> command is correctly configured</p>
 <pre class="language-"><code class="lang-sh">kubectl cluster-info
@@ -555,12 +552,6 @@ ibmcloud ks cluster-config -s --cluster <span class="token variable">$MYCLUSTER<
        <img src="images/kubectl_cluster-info.png" alt="">
      </a></p>
 </li>
-</ol>
-<h2 id="cloud-foundry">Cloud Foundry</h2>
-<p>Although you are going to deploy a Kubernetes application, the <code>ibmcloud dev</code> plugin requires a Cloud Foundry organization and space to be targeted in case you want to deploy the application in Cloud Foundry or provision Cloud Foundry services.</p>
-<ol>
-<li>Select the organization and space assigned to you for the lab:<pre class="language-"><code>ibmcloud target --cf
-</code></pre></li>
 </ol>
 
                                 
