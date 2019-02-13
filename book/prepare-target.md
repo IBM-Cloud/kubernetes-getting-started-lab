@@ -6,7 +6,7 @@ In this step, you'll configure kubectl to point to your cluster going forward. [
    ```sh
    ibmcloud target -g think-iks --cf
    ```
-2. Retrieve the cluster configuration:
+2. Retrieve the cluster configuration. Replace `<CLUSTER_NAME>` with the cluster assigned to you:
    {% codetabs name="Windows", type="sh" -%}
 ibmcloud ks cluster-config <CLUSTER_NAME>
    {%- language name="Bash", type="sh" -%}
