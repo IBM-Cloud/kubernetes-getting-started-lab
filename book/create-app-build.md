@@ -12,7 +12,7 @@ You can build and run the application as you normally would using `mvn` for Java
    ```
 3. Build the application.
    ```sh
-   ibmcloud dev build
+   ibmcloud dev build --trace
    ```
 
    {% hint style='info' %}
