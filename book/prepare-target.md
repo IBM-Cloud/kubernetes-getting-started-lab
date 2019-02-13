@@ -8,16 +8,14 @@ In this step, you'll configure kubectl to point to your cluster going forward. [
    ```sh
    ibmcloud target -g think-iks
    ```
-1. Retrieve the cluster configuration by setting MYCLUSTER environment variable to your cluster name:
+2. Retrieve the cluster configuration:
    {% codetabs name="Windows", type="sh" -%}
-set MYCLUSTER=<CLUSTER_NAME>
-ibmcloud ks cluster-config -s --cluster %MYCLUSTER% --export
+ibmcloud ks cluster-config <CLUSTER_NAME>
    {%- language name="Bash", type="sh" -%}
-export MYCLUSTER=<CLUSTER_NAME>
-ibmcloud ks cluster-config -s --cluster $MYCLUSTER --export
+ibmcloud ks cluster-config <CLUSTER_NAME>
    {%- endcodetabs %}
 1. Copy and paste the displayed **set** command to set the KUBECONFIG environment variable as directed. To verify whether the KUBECONFIG environment variable is set properly or not, run the following command: `echo %KUBECONFIG%`
-1. Check that the `kubectl` command is correctly configured
+2. Check that the `kubectl` command is correctly configured
    ```sh
    kubectl cluster-info
    ```

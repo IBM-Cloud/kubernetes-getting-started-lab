@@ -7,15 +7,11 @@ The IBM Cloud developer tools `ibmcloud dev` greatly cut down on development tim
    ibmcloud dev create
    ```
 1. To create a Node or Java starter, select:
-   {% codetabs name="Java", type="sh" -%}
 - Backend Service / Web App
+Then, 
 - Java - MicroProfile / JavaEE
+Then, 
 - Java Web App with Eclipse MicroProfile and Java EE (Web App)
-   {%- language name="Node", type="sh" -%}
-- Backend Service / Web App
-- Node
-- Node.js Web App with Express.js (Web App)
-   {%- endcodetabs %}
 
    {% hint style='tip' %}
    The developer tools also provide several starter combinations in different programming languages.
@@ -24,9 +20,9 @@ The IBM Cloud developer tools `ibmcloud dev` greatly cut down on development tim
    {% hint style='tip' %}
    Use your initials as prefix and only letters (a to z) when naming the app (no hyphen, no underscore, etc.).
    {% endhint %}
-1. Select the resource group you were assigned to to deploy this application.
-1. Do not add additional services.
-1. Do not add a DevOps toolchain, select **manual deployment**.
+2. Select the `think-iks` resource group.
+3. Do not add additional services.
+4. Do not add a DevOps toolchain, select **manual deployment**.
 
 This generates a starter application complete with the code and all the necessary configuration files for local development and deployment to cloud on Cloud Foundry or Kubernetes.
 

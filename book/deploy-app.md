@@ -10,7 +10,7 @@ With the application Docker image pushed to the IBM Cloud private container regi
    To upgrade helm, run this command `helm init --upgrade`
    {% endhint %}
 
-1. To install a Helm chart, change to the `chart\YOUR PROJECT NAME` directory and run the below command
+1. To install a Helm chart, change to the `chart\YOUR PROJECT NAME` directory and run the install command
    {% codetabs name="Windows", type="sh" -%}
 helm install . --name %MYPROJECT% --set image.repository=%MYREGISTRY%/%MYNAMESPACE%/%MYPROJECT% --debug
    {%- language name="Bash", type="sh" -%}
