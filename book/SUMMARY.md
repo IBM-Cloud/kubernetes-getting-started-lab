@@ -8,7 +8,6 @@
 
 * [IBM Cloud Kubernetes Service](iks-tour.md)]
 * [Overview](iks-tour-overview.md)
-* [Access](iks-tour-access.md)
 * [Worker Nodes and Pools](iks-tour-workers.md)
 
 ## Prepare

@@ -2,35 +2,19 @@
 
 Before you can run the application on the cluster, you first need to push the Docker image to the IBM Cloud private container registry.
 
-1. Find your **namespace** by listing all the namespace in the registry.
-   ```sh
-   ibmcloud cr namespaces
-   ```
-2. Set MYNAMESPACE and MYPROJECT environment variables to your namespace and project name respectively
+1. Set MYPROJECT environment variable. Replace <PROJECT_NAME> with your project name.
    {% codetabs name="Windows", type="sh" -%}
-set MYNAMESPACE=<NAMESPACE>
 set MYPROJECT=<PROJECT_NAME>
    {%- language name="Bash", type="sh" -%}
-export MYNAMESPACE=<NAMESPACE>
 export MYPROJECT=<PROJECT_NAME>
    {%- endcodetabs %}
-3. Identify your **Container Registry** (e.g. registry.ng.bluemix.net) by running:
-   ```sh
-   ibmcloud cr info
-   ```
-   The output should be similar to:
-   ```sh
-   Container Registry                registry.ng.bluemix.net
-   Container Registry API endpoint   https://registry.ng.bluemix.net/api
-   IBM Cloud API endpoint            https://api.ng.bluemix.net
-   IBM Cloud account details         John's Account (123456fafafafa)
-   IBM Cloud organization details     ()
-   ```
-4. Set MYREGISTRY env var to your registry (e.g registry.ng.bluemix.net).
+1. Set MYNAMESPACE and MYREGISTRY and env vars. Copy and paste these commands.
    {% codetabs name="Windows", type="sh" -%}
-set MYREGISTRY=<REGISTRY>
+set MYNAMESPACE=think-iks
+set MYREGISTRY=registry.ng.bluemix.net
    {%- language name="Bash", type="sh" -%}
-export MYREGISTRY=<REGISTRY>
+export MYNAMESPACE=think-iks 
+export MYREGISTRY=registry.ng.bluemix.net
    {%- endcodetabs %}
 5. Build and tag (`-t`) the docker image
    {% codetabs name="Windows", type="sh" -%}
