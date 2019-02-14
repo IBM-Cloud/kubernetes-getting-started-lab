@@ -16,13 +16,13 @@ helm install . --name %MYPROJECT% --set image.repository=%MYREGISTRY%/%MYNAMESPA
    {%- language name="Bash", type="sh" -%}
 helm install . --name $MYPROJECT --set image.repository=$MYREGISTRY/$MYNAMESPACE/$MYPROJECT --debug
    {%- endcodetabs %}
-1. Identity the public port the service is listening on. The port is a 5-digit number (e.g., 31569) under `PORT(S)`.
+1. Run the command below to identity the public port the service is listening on. The port is a 5-digit number (e.g., 31569) under `PORT(S)`.
    {% codetabs name="Windows", type="sh" -%}
 kubectl get service %MYPROJECT%-service
    {%- language name="Bash", type="sh" -%}
 kubectl get service $MYPROJECT-service
    {%- endcodetabs %}
-11. For the public IP of worker node, run the below command and pick the public IP of one of the workers. Replace `<CLUSTER_NAME>` with the cluster assigned to you:
+11. Run the below command and pick the public IP of one of the workers. Replace `<CLUSTER_NAME>` with the cluster assigned to you:
    {% codetabs name="Windows", type="sh" -%}
 ibmcloud ks workers <CLUSTER_NAME>
    {%- language name="Bash", type="sh" -%}
