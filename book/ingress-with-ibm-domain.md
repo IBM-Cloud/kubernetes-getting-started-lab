@@ -7,11 +7,11 @@ In the previous step, the application was accessed with a not standard port. The
 Using the Kubernetes Ingress, you can set up the cluster inbound connection to the service:
 ![Ingress](images/Ingress.png)
 
-1. Identify your IBM-provided **Ingress domain**:
+1. Identify your IBM-provided **Ingress domain**. Replace `<CLUSTER_NAME>` with the cluster assigned to you:
    {% codetabs name="Windows", type="sh" -%}
-ibmcloud ks cluster-get %MYCLUSTER%
+ibmcloud ks cluster-get <CLUSTER_NAME>
    {%- language name="Bash", type="sh" -%}
-ibmcloud ks cluster-get $MYCLUSTER
+ibmcloud ks cluster-get <CLUSTER_NAME>
    {%- endcodetabs %}
    to find
    ```

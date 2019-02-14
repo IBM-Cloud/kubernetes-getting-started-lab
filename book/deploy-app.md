@@ -22,10 +22,10 @@ kubectl get service %MYPROJECT%-service
    {%- language name="Bash", type="sh" -%}
 kubectl get service $MYPROJECT-service
    {%- endcodetabs %}
-11. For the public IP of worker node, run the below command and pick the public IP of one of the workers:
+11. For the public IP of worker node, run the below command and pick the public IP of one of the workers. Replace `<CLUSTER_NAME>` with the cluster assigned to you:
    {% codetabs name="Windows", type="sh" -%}
-ibmcloud ks workers %MYCLUSTER%
+ibmcloud ks workers <CLUSTER_NAME>
    {%- language name="Bash", type="sh" -%}
-ibmcloud ks workers $MYCLUSTER
+ibmcloud ks workers <CLUSTER_NAME>
    {%- endcodetabs %}
 12. Access the application at `http://worker-ip-address:portnumber/`.
