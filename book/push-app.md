@@ -2,11 +2,11 @@
 
 Before you can run the application on the cluster, you first need to push the Docker image to the IBM Cloud private container registry.
 
-1. Set MYPROJECT environment variable. Replace <PROJECT_NAME> with your project name.
+1. Set MYPROJECT environment variable. Replace <APP_NAME> with the name of the application you created in the previous steps.
    {% codetabs name="Windows", type="sh" -%}
-set MYPROJECT=<PROJECT_NAME>
+set MYPROJECT=<APP_NAME>
    {%- language name="Bash", type="sh" -%}
-export MYPROJECT=<PROJECT_NAME>
+export MYPROJECT=<APP_NAME>
    {%- endcodetabs %}
 1. Set MYNAMESPACE and MYREGISTRY and env vars. Copy and paste these commands.
    {% codetabs name="Windows", type="sh" -%}
