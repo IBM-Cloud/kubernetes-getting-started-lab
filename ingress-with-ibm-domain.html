@@ -528,8 +528,8 @@
        <img src="images/Ingress.png" alt="Ingress">
      </a></p>
 <ol>
-<li>Identify your IBM-provided <strong>Ingress domain</strong>:
-<div class="codetabs"><div class="codetabs-header"><div class="tab active" data-codetab="0">Windows</div><div class="tab" data-codetab="1">Bash</div></div><div class="codetabs-body"><div class="tab active" data-codetab="0"><pre class="language-"><code class="lang-sh">ibmcloud ks cluster-get %MYCLUSTER%</code></pre></div><div class="tab" data-codetab="1"><pre class="language-"><code class="lang-sh">ibmcloud ks cluster-get <span class="token variable">$MYCLUSTER</span></code></pre></div></div></div>
+<li>Identify your IBM-provided <strong>Ingress domain</strong>. Replace <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>CLUSTER_NAME</span><span class="token punctuation">&gt;</span></span></code> with the cluster assigned to you:
+<div class="codetabs"><div class="codetabs-header"><div class="tab active" data-codetab="0">Windows</div><div class="tab" data-codetab="1">Bash</div></div><div class="codetabs-body"><div class="tab active" data-codetab="0"><pre class="language-"><code class="lang-sh">ibmcloud ks cluster-get <span class="token operator">&lt;</span>CLUSTER_NAME<span class="token operator">&gt;</span></code></pre></div><div class="tab" data-codetab="1"><pre class="language-"><code class="lang-sh">ibmcloud ks cluster-get <span class="token operator">&lt;</span>CLUSTER_NAME<span class="token operator">&gt;</span></code></pre></div></div></div>
 to find<pre class="language-"><code>Ingress subdomain: mycluster.us-south.containers.appdomain.cloud
 Ingress secret:    mycluster
 </code></pre></li>
