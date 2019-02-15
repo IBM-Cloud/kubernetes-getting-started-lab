@@ -592,34 +592,33 @@ curl -sL https://ibm.biz/install-sysdig-k8s-agent | bash -s -- -a b66e3139-b40a-
 <li><strong><em>sysdig_capture_enabled</em></strong>: This parameter enables or disables the Sysdig capture feature. By default is set to true. </li>
 </ul>
 <p>An example yaml file looks like this:</p>
-<pre class="language-"><code class="lang-sh"> apiVersion: v1
- kind: ConfigMap
- metadata:
- name: sysdig-agent
- data:
- dragent.yaml: <span class="token operator">|</span>
-     <span class="token comment">### Agent tags</span>
-     tags: linux:ubuntu,dept:dev,local:nyc
+<pre class="language-"><code class="lang-sh">apiVersion: v1
+kind: ConfigMap
+metadata:
+name: sysdig-agent
+data:
+dragent.yaml: <span class="token operator">|</span>
+  <span class="token comment">### Agent tags</span>
+  tags: linux:ubuntu,dept:dev,local:nyc
+  <span class="token comment">#### Sysdig Software related config ####</span>
 
-     <span class="token comment">#### Sysdig Software related config ####</span>
+  <span class="token comment"># Sysdig collector address</span>
+  collector: us-south.monitoring.cloud.ibm.com
 
-     <span class="token comment"># Sysdig collector address</span>
-     collector: us-south.monitoring.cloud.ibm.com
+  <span class="token comment"># Collector TCP port</span>
+  collector_port: 6443
 
-     <span class="token comment"># Collector TCP port</span>
-     collector_port: 6443
+  <span class="token comment"># Whether collector accepts ssl</span>
+  ssl: <span class="token boolean">true</span>
 
-     <span class="token comment"># Whether collector accepts ssl</span>
-     ssl: <span class="token boolean">true</span>
+  <span class="token comment"># collector certificate validation</span>
+  ssl_verify_certificate: <span class="token boolean">true</span>
 
-     <span class="token comment"># collector certificate validation</span>
-     ssl_verify_certificate: <span class="token boolean">true</span>
+  <span class="token comment">#######################################</span>
+  new_k8s: <span class="token boolean">true</span>
+  k8s_cluster_name: lab-1
 
-     <span class="token comment">#######################################</span>
-     new_k8s: <span class="token boolean">true</span>
-     k8s_cluster_name: lab-1
-
-     sysdig_capture_enabled: <span class="token boolean">false</span>
+  sysdig_capture_enabled: <span class="token boolean">false</span>
 </code></pre>
 </li>
 <li><p>Apply the config map to the cluster:</p>
