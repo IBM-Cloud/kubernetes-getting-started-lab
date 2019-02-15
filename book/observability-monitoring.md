@@ -80,34 +80,33 @@ curl -sL https://ibm.biz/install-sysdig-k8s-agent | bash -s -- -a b66e3139-b40a-
    An example yaml file looks like this:
 
    ```sh
-    apiVersion: v1
-    kind: ConfigMap
-    metadata:
-    name: sysdig-agent
-    data:
-    dragent.yaml: |
-        ### Agent tags
-        tags: linux:ubuntu,dept:dev,local:nyc
+   apiVersion: v1
+   kind: ConfigMap
+   metadata:
+   name: sysdig-agent
+   data:
+   dragent.yaml: |
+     ### Agent tags
+     tags: linux:ubuntu,dept:dev,local:nyc
+     #### Sysdig Software related config ####
 
-        #### Sysdig Software related config ####
+     # Sysdig collector address
+     collector: us-south.monitoring.cloud.ibm.com
 
-        # Sysdig collector address
-        collector: us-south.monitoring.cloud.ibm.com
+     # Collector TCP port
+     collector_port: 6443
 
-        # Collector TCP port
-        collector_port: 6443
+     # Whether collector accepts ssl
+     ssl: true
 
-        # Whether collector accepts ssl
-        ssl: true
+     # collector certificate validation
+     ssl_verify_certificate: true
 
-        # collector certificate validation
-        ssl_verify_certificate: true
+     #######################################
+     new_k8s: true
+     k8s_cluster_name: lab-1
 
-        #######################################
-        new_k8s: true
-        k8s_cluster_name: lab-1
-
-        sysdig_capture_enabled: false
+     sysdig_capture_enabled: false
    ```
 
 1. Apply the config map to the cluster:
